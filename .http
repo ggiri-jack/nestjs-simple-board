@@ -5,15 +5,14 @@ GET http://localhost:3000/board
 ###
 
 # 게시글 하나 가져오기
-GET http://localhost:3000/board/16
+GET http://localhost:3000/board/1
 
 ###
 
 # 게시글 생성
 POST http://localhost:3000/board
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJmYXN0Y2FtcHVzMjAyNCIsIm5hbWUiOiJmYXN0Y2FtcHVzbmFtZTIiLCJpYXQiOjE2OTA3Mjk2ODIsImV4cCI6MTY5MDczMzI4Mn0.zZ46zzi_UeOrYxPp6nCqi-7QyGBUsiOPqOzQSI3LuKk
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphZWhva2ltIiwibmFtZSI6ImphZWhvIiwiaWF0IjoxNzA0NTI3Njg2LCJleHAiOjE3MDQ1MzEyODZ9.u1vvLA9ziiFJbKpoB0Wt_o9OCXwD0Qoj3C5V4Hi32E8
 {
     "contents": "새로운 게시글"
 }
@@ -23,10 +22,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hb
 # 게시글 수정
 PUT http://localhost:3000/board/16
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJmYXN0Y2FtcHVzMjAyNCIsIm5hbWUiOiJmYXN0Y2FtcHVzbmFtZTIiLCJpYXQiOjE2OTA3MTI5NTcsImV4cCI6MTY5MDcxNjU1N30.typANtJn7mCfqCBsKueyH6AwxNr7NdhsYtfjOx6AbVg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphZWhva2ltIiwibmFtZSI6ImphZWhvIiwiaWF0IjoxNzA0NTI3Njg2LCJleHAiOjE3MDQ1MzEyODZ9.u1vvLA9ziiFJbKpoB0Wt_o9OCXwD0Qoj3C5V4Hi32E8
 
 {
-    "contents": "FastCampus New world"
+    "contents": "수정된 게시글"
 }
 
 ###
@@ -34,7 +33,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hb
 # 게시글 삭제
 
 DELETE http://localhost:3000/board/16
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJmYXN0Y2FtcHVzMjAyNCIsIm5hbWUiOiJmYXN0Y2FtcHVzbmFtZTIiLCJpYXQiOjE2OTA3MTI5NTcsImV4cCI6MTY5MDcxNjU1N30.typANtJn7mCfqCBsKueyH6AwxNr7NdhsYtfjOx6AbVg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphZWhva2ltIiwibmFtZSI6ImphZWhvIiwiaWF0IjoxNzA0NTI3Njg2LCJleHAiOjE3MDQ1MzEyODZ9.u1vvLA9ziiFJbKpoB0Wt_o9OCXwD0Qoj3C5V4Hi32E8
 
 ###
 GET http://localhost:3000
@@ -54,9 +53,18 @@ POST http://localhost:3000/user
 content-type: application/json
 
 {
-    "username": "fastcampus2024",
-    "name": "fastcampusname2",
-    "password": "fastcampuspassword"
+    "username": "jaehokim",
+    "name": "jaeho",
+    "password": "12345678"
+}
+
+; response
+{
+    "username": "jaehokim",
+    "name": "jaeho",
+    "password": "$2b$11$D2m6ZohidT/10yQ25U9ke.3zjihZO6bxCWMWXBKFhTmY2ep5l6JS.",
+    "boardCount": null,
+    "id": 1
 }
 
 ###
@@ -67,9 +75,10 @@ POST http://localhost:3000/user/login
 content-type: application/json
 
 {
-    "username": "fastcampus2024",
-    "password": "fastcampuspassword"
+    "username": "jaehokim",
+    "password": "12345678"
 }
+
 
 ###
 
@@ -79,8 +88,8 @@ POST http://localhost:3000/login
 content-type: application/json
 
 {
-    "username": "fastcampus2024",
-    "password": "fastcampuspassword"
+    "username": "jaehokim",
+    "password": "12345678"
 }
 
 ###
@@ -88,4 +97,4 @@ content-type: application/json
 # 유저 ME
 GET http://localhost:3000/me
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJmYXN0Y2FtcHVzMjAyNCIsIm5hbWUiOiJmYXN0Y2FtcHVzbmFtZTIiLCJpYXQiOjE2OTA3MDczNjMsImV4cCI6MTY5MDcxMDk2M30.F0wRfPGNoYaqOm0IYNFSeHXY5gRRe4hMxQfaRDinuV0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphZWhva2ltIiwibmFtZSI6ImphZWhvIiwiaWF0IjoxNzA0NTI3Njg2LCJleHAiOjE3MDQ1MzEyODZ9.u1vvLA9ziiFJbKpoB0Wt_o9OCXwD0Qoj3C5V4Hi32E8

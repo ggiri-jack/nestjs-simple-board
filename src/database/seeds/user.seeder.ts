@@ -11,9 +11,9 @@ export default class UserSeeder implements Seeder {
 
     await repository.insert([
       {
-        username: 'jack',
-        name: 'jaeho kim',
-        password: 'asdf1234',
+        username: 'jaehokim',
+        name: 'jaeho',
+        password: '12345678',
       },
     ]);
   }

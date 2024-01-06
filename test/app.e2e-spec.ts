@@ -34,8 +34,8 @@ describe('e2e 테스트', () => {
       return request(app.getHttpServer())
         .post('/login')
         .send({
-          username: 'jaeho',
-          password: '1234',
+          username: 'jaehokim',
+          password: '12345678',
         })
         .expect(201);
     });
